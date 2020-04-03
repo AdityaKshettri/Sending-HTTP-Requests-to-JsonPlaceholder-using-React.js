@@ -7,7 +7,7 @@ class NewPost extends Component {
     state = {
         title: '',
         body: '',
-        author: 'Adi'
+        author: 'Adi',
     }
     
     postDataHandler = () => {
@@ -19,6 +19,7 @@ class NewPost extends Component {
         axios.post('/posts', data)
             .then(response => {
                 console.log(response);
+                this.props.history.push('/posts');
             });
     }
 
